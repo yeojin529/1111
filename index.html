@@ -116,7 +116,12 @@ nav::after{content:"";position:absolute;left:0;right:0;top:100%;height:12px;
 .promo-copy{display:flex;flex-direction:column;gap:16px}
 .promo-copy h2{font-family:var(--serif);font-weight:400;font-size:34px;line-height:1.04;white-space:pre-line}
 .promo-copy p{font-size:15px;line-height:1.65;color:var(--body)}
-.badges{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.badges{display:flex;justify-content:space-between;padding:4px 0 6px}
+.seal{position:relative;width:30.1%;aspect-ratio:1}
+.seal svg{position:absolute;inset:0;width:100%;height:100%}
+.seal .t{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px}
+.seal b{font-weight:400;font-size:24px;line-height:1.2}
+.seal small{font-family:var(--sans);font-weight:700;font-size:7px;letter-spacing:.08em}
 .bd{border-radius:24px;padding:18px 4px;display:flex;flex-direction:column;align-items:center;gap:4px}
 .bd b{font-weight:400;font-size:24px}
 .bd small{font-family:var(--sans);font-weight:700;font-size:9px;letter-spacing:.08em}
@@ -145,7 +150,7 @@ nav::after{content:"";position:absolute;left:0;right:0;top:100%;height:12px;
 .date{font-family:var(--sans);font-weight:500;font-size:11px;letter-spacing:.1em;color:var(--body)}
 .sweet{position:absolute;right:2px;top:18px;width:96px;height:96px;rotate:-12deg;cursor:pointer;background:none;z-index:2}
 .sweet span{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding-bottom:6px;font-family:var(--script);font-size:14px;line-height:.9;color:var(--cream);text-align:center}
-.burst{position:fixed;pointer-events:none;z-index:50;animation:burst 1.1s ease-out forwards}
+.burst{position:absolute;pointer-events:none;z-index:50;animation:burst 1.1s ease-out forwards}
 @keyframes burst{to{transform:translate(var(--dx),var(--dy)) scale(.6) rotate(var(--r));opacity:0}}
 .lsticks{display:none}
 
@@ -175,67 +180,9 @@ footer small{font-family:var(--sans);font-weight:500;font-size:9px;letter-spacin
 .rv.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.ill .stick,.float{animation:none}html{scroll-behavior:auto}}
 
-/* ---------- UNFOLDED (Z Fold main screen) & wider ---------- */
-@media (min-width:640px){
-  :root{--pad:44px}
-  nav .bar{padding:18px 32px}
-  nav .side{width:220px}
-  nav .wide{display:inline}
-  nav .narrow{display:none}
-  nav .logo{font-size:30px}
-  .hero{padding:64px 0}
-  .hero .wrap{flex-direction:row;gap:24px}
-  .hero-copy{align-items:flex-start;text-align:left;gap:20px;flex:1}
-  .hero h1{font-size:50px}
-  .hero p{font-size:16px}
-  .hero .btn{width:auto}
-  .ill{flex:0 0 360px;max-width:360px}
-  .cal-sec{padding:56px 0}
-  .card{padding:48px 28px 36px;gap:16px}
-  .card::before{background-size:36px 22px}
-  .card h2{font-size:36px}
-  .month .wd{font-size:11px}
-  .day{aspect-ratio:1/0.9}
-  .day .n{font-size:22px}
-  .day .lb{display:block}
-  .day.circ::after{inset:-10px;border-width:3px}
-  .chip{font-size:13px}
-  .psst{flex-direction:row;justify-content:space-between;text-align:left;padding:14px 12px 14px 24px}
-  .psst p{white-space:normal;font-size:13px}
-  .dday{width:auto;flex:none}
-  .promo .grid{flex-direction:row-reverse;align-items:center;gap:36px;padding:0 0 0 0}
-  .promo .wrap{padding-right:0}
-  .vis{flex:0 0 380px}
-  .promo-copy{flex:1;padding:56px 0}
-  .promo-copy h2{font-size:44px}
-  .promo-copy p{font-size:16px}
-  .bd b{font-size:26px}
-  .promo .btn{width:auto;align-self:flex-start}
-  .letter{padding:72px 0}
-  .letter .wrap{padding:0 56px}
-  .lcard{padding:64px;gap:18px}
-  .lcard::before,.lcard::after{background-size:36px 36px;height:36px;background-image:radial-gradient(circle,var(--cream) 18px,transparent 18.5px)}
-  .lcard::before{top:-18px}.lcard::after{bottom:-18px}
-  .lcard h2{font-size:42px}
-  .with{font-size:36px}
-  .ltext{font-size:16px}
-  .from{font-size:30px}
-  .sweet{width:140px;height:140px;right:20px;top:24px}
-  .sweet span{font-size:20px}
-  .lsticks{display:block}
-  .lsticks .stick{position:absolute;width:15px;height:221px}
-  footer{padding:80px var(--pad) 72px}
-  footer::after{width:80px;background:repeating-linear-gradient(90deg,var(--cream) 0 10px,var(--pink) 10px 20px)}
-  footer .big{font-size:86px;gap:22px}
-  footer .big .stick{width:14px;height:120px}
-  footer .tou{font-size:80px}
-}
-@media (min-width:1100px){
-  .hero h1{font-size:64px}
-  .ill{flex-basis:460px;max-width:460px}
-  .vis{flex-basis:520px}
-  .promo-copy h2{font-size:56px}
-}
+/* ---------- one design for every screen: the 412px cover layout, scaled ---------- */
+html{background:var(--cream)}
+body{max-width:412px;margin:0 auto}
 </style>
 </head>
 <body>
@@ -338,9 +285,9 @@ footer small{font-family:var(--sans);font-weight:500;font-size:9px;letter-spacin
 It wants Pepero!</h2>
         <p>이번 달부터 작대기 하나 더! 상병 진급 진심으로 축하해!! 자기가 고생하는 만큼 빼빼로도 제일 큰 걸로 준비했어</p>
         <div class="badges">
-          <div class="bd a"><b>상병</b><small>CORPORAL</small></div>
-          <div class="bd b"><b>11.11</b><small>PEPERO DAY</small></div>
-          <div class="bd c"><b>∞</b><small>LOVE / DAY</small></div>
+          <div class="seal" style="rotate:-6deg;color:#5F6F45"><svg viewBox="0 0 112 112"><polygon points="56.0,0.0 64.4,8.6 75.2,3.4 80.1,14.3 92.0,13.1 92.9,25.0 104.5,28.0 101.3,39.5 111.1,46.3 104.2,56.0 111.1,65.7 101.3,72.5 104.5,84.0 92.9,87.0 92.0,98.9 80.1,97.7 75.2,108.6 64.4,103.4 56.0,112.0 47.6,103.4 36.8,108.6 31.9,97.7 20.0,98.9 19.1,87.0 7.5,84.0 10.7,72.5 0.9,65.7 7.8,56.0 0.9,46.3 10.7,39.5 7.5,28.0 19.1,25.0 20.0,13.1 31.9,14.3 36.8,3.4 47.6,8.6" fill="#E9A8B8"/><circle cx="56" cy="56" r="44" fill="none" stroke="#5F6F45" stroke-width="1" stroke-dasharray="2 3" opacity=".7"/></svg><div class="t"><b style="font-family:var(--koSerif);font-weight:700">상병</b><small>CORPORAL</small></div></div>
+          <div class="seal" style="rotate:4deg;color:#FBF7F0"><svg viewBox="0 0 112 112"><polygon points="56.0,0.0 64.4,8.6 75.2,3.4 80.1,14.3 92.0,13.1 92.9,25.0 104.5,28.0 101.3,39.5 111.1,46.3 104.2,56.0 111.1,65.7 101.3,72.5 104.5,84.0 92.9,87.0 92.0,98.9 80.1,97.7 75.2,108.6 64.4,103.4 56.0,112.0 47.6,103.4 36.8,108.6 31.9,97.7 20.0,98.9 19.1,87.0 7.5,84.0 10.7,72.5 0.9,65.7 7.8,56.0 0.9,46.3 10.7,39.5 7.5,28.0 19.1,25.0 20.0,13.1 31.9,14.3 36.8,3.4 47.6,8.6" fill="#5F6F45"/><circle cx="56" cy="56" r="44" fill="none" stroke="#FBF7F0" stroke-width="1" stroke-dasharray="2 3" opacity=".7"/></svg><div class="t"><b style="font-family:var(--serif)">11.11</b><small>PEPERO DAY</small></div></div>
+          <div class="seal" style="rotate:-3deg;color:#5F6F45"><svg viewBox="0 0 112 112"><polygon points="56.0,0.0 64.4,8.6 75.2,3.4 80.1,14.3 92.0,13.1 92.9,25.0 104.5,28.0 101.3,39.5 111.1,46.3 104.2,56.0 111.1,65.7 101.3,72.5 104.5,84.0 92.9,87.0 92.0,98.9 80.1,97.7 75.2,108.6 64.4,103.4 56.0,112.0 47.6,103.4 36.8,108.6 31.9,97.7 20.0,98.9 19.1,87.0 7.5,84.0 10.7,72.5 0.9,65.7 7.8,56.0 0.9,46.3 10.7,39.5 7.5,28.0 19.1,25.0 20.0,13.1 31.9,14.3 36.8,3.4 47.6,8.6" fill="#F6D3DC"/><circle cx="56" cy="56" r="44" fill="none" stroke="#5F6F45" stroke-width="1" stroke-dasharray="2 3" opacity=".7"/></svg><div class="t"><b style="font-family:var(--serif)">∞</b><small>LOVE / DAY</small></div></div>
         </div>
         <button class="btn" id="replyBtn">답장 보내기 &nbsp;→</button>
       </div>
@@ -400,6 +347,10 @@ It wants Pepero!</h2>
 </div>
 
 <script>
+(function(){
+  function fit(){var z=Math.min(window.innerWidth/412,832/412);document.documentElement.style.zoom=z>1.01?z:'';}
+  fit();window.addEventListener('resize',fit);
+})();
 // November 2026 calendar (Nov 1 = Sunday)
 (function(){
   const m=document.getElementById('month');
@@ -437,20 +388,21 @@ It wants Pepero!</h2>
 })();
 
 // heart burst
-function burst(x,y){
+function burst(host){
+  if(getComputedStyle(host).position==='static')host.style.position='relative';
   const cols=['#E9A8B8','#F6D3DC','#8FA06A','#5F6F45'];
   for(let i=0;i<14;i++){
     const s=document.createElementNS('http://www.w3.org/2000/svg','svg');
     s.setAttribute('class','burst');s.setAttribute('width','18');s.setAttribute('height','18');s.setAttribute('fill',cols[i%4]);
     s.innerHTML='<use href="#heart"/>';
     const a=Math.random()*Math.PI*2,r=60+Math.random()*90;
-    s.style.left=(x-9)+'px';s.style.top=(y-9)+'px';
+    s.style.left='calc(50% - 9px)';s.style.top='calc(50% - 9px)';
     s.style.setProperty('--dx',Math.cos(a)*r+'px');s.style.setProperty('--dy',Math.sin(a)*r+'px');s.style.setProperty('--r',(Math.random()*120-60)+'deg');
-    document.body.appendChild(s);setTimeout(()=>s.remove(),1200);
+    host.appendChild(s);setTimeout(()=>s.remove(),1200);
   }
 }
-document.getElementById('sweet').addEventListener('click',e=>{const r=e.currentTarget.getBoundingClientRect();burst(r.left+r.width/2,r.top+r.height/2);});
-document.querySelectorAll('.day.m11,.day.m28').forEach(d=>d.addEventListener('click',e=>{const r=d.getBoundingClientRect();burst(r.left+r.width/2,r.top+r.height/2);}));
+document.getElementById('sweet').addEventListener('click',e=>burst(e.currentTarget));
+document.querySelectorAll('.day.m11,.day.m28').forEach(d=>d.addEventListener('click',()=>burst(d)));
 
 // reply modal
 const modal=document.getElementById('modal'),toast=document.getElementById('toast'),ta=document.getElementById('reply');
