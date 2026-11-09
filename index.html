@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Happy Pepero Day — for my Corporal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Gaegu:wght@700&family=Gowun+Batang:wght@400;700&family=Gowun+Dodum&family=Pinyon+Script&family=Young+Serif&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#FBF7F0; --ink:#5F6F45; --body:#7C8560; --sage:#8FA06A; --dark:#5F6F45;
+  --pink:#F6D3DC; --pinkDeep:#E9A8B8; --grid:#F4D6DD;
+  --serif:'Young Serif',serif; --script:'Pinyon Script',cursive; --sans:'DM Sans',sans-serif;
+  --ko:'Gowun Dodum',sans-serif; --koSerif:'Gowun Batang',serif; --hand:'Gaegu',cursive;
+  --pad:20px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--cream);color:var(--ink);font-family:var(--ko);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+button{font:inherit;cursor:pointer;border:0}
+.wrap{max-width:1040px;margin:0 auto;padding:0 var(--pad)}
+.eyebrow{font-family:var(--sans);font-weight:500;font-size:11px;letter-spacing:.1em;text-transform:uppercase}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 22px;border-radius:4px;font-family:var(--ko);font-size:14px;text-decoration:none;transition:transform .15s}
+.btn:active{transform:scale(.97)}
+svg.heart{display:block}
+
+/* ---------- NAV ---------- */
+nav{position:sticky;top:0;z-index:20;background:var(--pink)}
+nav .bar{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;max-width:1040px;margin:0 auto}
+nav .side{width:90px;display:flex;align-items:center;gap:22px;font-family:var(--sans);font-weight:500;font-size:11px;letter-spacing:.08em}
+nav .side.r{justify-content:flex-end}
+nav .side a{color:var(--ink);text-decoration:none}
+nav .logo{font-family:var(--serif);font-size:24px;color:var(--ink);text-decoration:none}
+nav .wide{display:none}
+nav::after{content:"";position:absolute;left:0;right:0;top:100%;height:12px;
+  background:radial-gradient(circle at 12px 0,var(--pink) 12px,transparent 12.5px) 0 0/24px 12px repeat-x}
+
+/* ---------- HERO ---------- */
+.hero{position:relative;background-color:var(--cream);
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:28px 28px;padding:44px 0 48px}
+.hero .wrap{display:flex;flex-direction:column;gap:22px;align-items:center}
+.hero-copy{display:flex;flex-direction:column;gap:16px;align-items:center;text-align:center;width:100%}
+.hero h1{font-family:var(--serif);font-weight:400;font-size:38px;line-height:1.04;letter-spacing:-.01em}
+.hero p{font-size:15px;line-height:1.65;color:var(--body);max-width:520px}
+.hero .btn{background:var(--pink);color:var(--ink);width:100%}
+
+.ill{position:relative;width:100%;max-width:400px;aspect-ratio:620/600;container-type:inline-size}
+.ill > *{position:absolute}
+.photo{background:#EFE6DA;border:5px solid var(--cream);box-shadow:0 4px 12px rgba(64,51,38,.18);overflow:hidden}
+.photo img{position:relative;z-index:1;width:100%;height:100%;object-fit:cover}
+.photo .ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;font-size:2.2cqw;color:#9C8B7C;text-align:center;border:1.5px dashed #B8A99A}
+.tape{background:var(--pinkDeep);opacity:.85}
+.stick{width:2.9cqw;height:41.9cqw;color:#5B3B30;transform-origin:50% 100%}
+.ill .stick{animation:wiggle 4s ease-in-out infinite}
+@keyframes wiggle{0%,100%{rotate:0deg}50%{rotate:2deg}}
+.box{left:4.8%;top:35%;width:41.9%;height:51.7%;background:var(--sage);border-radius:2.3cqw;rotate:-4deg;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.6cqw;color:var(--cream);box-shadow:0 6px 18px rgba(64,51,38,.12)}
+.box b{font-family:var(--serif);font-weight:400;font-size:7.4cqw}
+.box small{font-family:var(--sans);font-weight:500;font-size:1.8cqw;letter-spacing:.14em}
+.box hr{width:22.5cqw;border:0;border-top:1.5px solid var(--cream);opacity:.9}
+.box span{font-family:var(--hand);font-size:4.5cqw}
+.rank{display:flex;flex-direction:column;gap:.8cqw}
+.rank i{display:block;width:7.1cqw;height:1.45cqw;border-radius:.3cqw;background:currentColor}
+.note{left:48%;top:68%;font-family:var(--hand);font-size:4.3cqw;line-height:1.2;color:var(--ink);rotate:5deg;white-space:pre}
+.tag,.sticker,.badge b{white-space:nowrap}
+.float{animation:floaty 3s ease-in-out infinite}
+@keyframes floaty{0%,100%{translate:0 0}50%{translate:0 -6px}}
+
+/* ---------- CALENDAR ---------- */
+.cal-sec{background:var(--sage);padding:44px 0 40px}
+.cal-sec .wrap{display:flex;flex-direction:column;gap:16px}
+.card{position:relative;background:var(--cream);padding:36px 12px 24px;display:flex;flex-direction:column;align-items:center;gap:12px}
+.card::before{content:"";position:absolute;left:0;right:0;top:-11px;height:22px;
+  background:radial-gradient(circle,var(--dark) 11px,transparent 11.5px) 8px 0/28px 22px repeat-x}
+.card h2{font-family:var(--serif);font-weight:400;font-size:28px;letter-spacing:.01em}
+.month{width:100%;display:grid;grid-template-columns:repeat(7,1fr)}
+.month .wd{font-family:var(--sans);font-weight:500;font-size:9px;letter-spacing:.08em;text-align:center;padding-bottom:8px}
+.day{position:relative;aspect-ratio:1/1.15;border:1px solid var(--ink);margin:0 -1px -1px 0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;background:var(--cream)}
+.day .n{font-family:var(--serif);font-size:17px;line-height:1}
+.day .lb{display:none;font-size:10px;text-align:center;line-height:1.2}
+.day.m1{background:var(--pink)}
+.day.m11{background:var(--dark);color:var(--cream)}
+.day.m28{background:var(--pinkDeep)}
+.day.circ::after{content:"";position:absolute;inset:-8px;border:2px solid var(--pinkDeep);border-radius:50%;rotate:-5deg;pointer-events:none}
+.day.m28.circ::after{border-color:var(--sage)}
+.day.empty{border:0;background:transparent}
+.day.today .n{text-decoration:underline;text-underline-offset:3px}
+.legend{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.chip{padding:6px 12px;border-radius:20px;font-size:12px}
+.psst{background:var(--pink);border-radius:18px;padding:16px;display:flex;flex-direction:column;gap:12px;align-items:center;text-align:center}
+.psst p{font-size:14px;line-height:1.5;white-space:pre-line}
+.dday{width:100%;background:var(--dark);color:var(--cream);border-radius:4px;padding:12px 16px;display:flex;gap:10px;align-items:center;justify-content:center}
+.dday b{font-weight:400;font-size:15px}
+.dday small{font-family:var(--sans);font-weight:500;font-size:11px;letter-spacing:.1em;opacity:.85}
+
+/* ---------- PROMOTION ---------- */
+.promo{background:var(--cream)}
+.promo .grid{display:flex;flex-direction:column;gap:28px;padding-bottom:44px}
+.vis{position:relative;width:100%;aspect-ratio:680/560;container-type:inline-size;overflow:hidden;
+  background:repeating-linear-gradient(90deg,var(--sage) 0 30px,var(--pink) 30px 60px)}
+.vis > *{position:absolute}
+.vis .photo{border-width:.9cqw}
+.badge{left:5.9%;top:58.9%;width:27.9cqw;height:27.9cqw;border-radius:50%;background:var(--cream);border:.37cqw solid var(--ink);rotate:8deg;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.4cqw;color:var(--ink)}
+.badge .rank i{width:8.4cqw;height:1.7cqw}
+.badge b{font-family:var(--sans);font-weight:700;font-size:2.5cqw;letter-spacing:.12em}
+.badge small{font-family:var(--sans);font-weight:500;font-size:2.2cqw;letter-spacing:.08em}
+.tag{left:58.8%;top:78.6%;background:var(--cream);border:.22cqw solid var(--ink);padding:2cqw 3.2cqw;rotate:-8deg;color:var(--ink)}
+.tag i{display:block;font-style:normal;font-family:var(--script);font-size:4.7cqw}
+.tag span{font-family:var(--hand);font-size:4.4cqw}
+.sticker{left:69%;top:7%;background:var(--pink);border:.3cqw solid var(--ink);border-radius:7.4cqw;padding:2cqw 3.8cqw;rotate:10deg;
+  font-family:var(--script);font-size:5.9cqw;line-height:.92;text-align:center;color:var(--ink)}
+.promo-copy{display:flex;flex-direction:column;gap:16px}
+.promo-copy h2{font-family:var(--serif);font-weight:400;font-size:34px;line-height:1.04;white-space:pre-line}
+.promo-copy p{font-size:15px;line-height:1.65;color:var(--body)}
+.badges{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.bd{border-radius:24px;padding:18px 4px;display:flex;flex-direction:column;align-items:center;gap:4px}
+.bd b{font-weight:400;font-size:24px}
+.bd small{font-family:var(--sans);font-weight:700;font-size:9px;letter-spacing:.08em}
+.bd.a{background:var(--pinkDeep)} .bd.a b{font-family:var(--koSerif);font-weight:700}
+.bd.b{background:var(--dark);color:var(--cream)} .bd.b b,.bd.c b{font-family:var(--serif)}
+.bd.c{background:var(--pink)}
+.promo .btn{background:var(--dark);color:var(--cream);width:100%}
+
+.checker{height:28px;background:conic-gradient(var(--dark) 25%,var(--pink) 0 50%,var(--dark) 0 75%,var(--pink) 0) 0 0/28px 28px}
+
+/* ---------- LETTER ---------- */
+.letter{position:relative;padding:56px 0;background:repeating-linear-gradient(90deg,var(--pink) 0 22px,#FAE4EA 22px 44px);overflow:hidden}
+.letter .wrap{padding:0 16px}
+.lcard{position:relative;background:var(--cream);padding:52px 22px;display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center;max-width:760px;margin:0 auto}
+.lcard::before,.lcard::after{content:"";position:absolute;left:0;right:0;height:28px;
+  background:radial-gradient(circle,var(--cream) 14px,transparent 14.5px) 0 0/28px 28px repeat-x}
+.lcard::before{top:-14px} .lcard::after{bottom:-14px}
+.stamp{border:1.5px solid var(--ink);border-radius:6px;padding:5px 12px;display:flex;flex-direction:column;align-items:center}
+.stamp b{font-family:var(--serif);font-weight:400;font-size:18px}
+.stamp small{font-family:var(--sans);font-weight:700;font-size:7px;letter-spacing:.16em}
+.lpill{background:var(--pink);padding:4px 10px;font-family:var(--sans);font-weight:700;font-size:10px;letter-spacing:.12em}
+.lcard h2{font-family:var(--koSerif);font-weight:700;font-size:32px}
+.with{font-family:var(--script);font-size:30px;color:var(--pinkDeep)}
+.ltext{font-family:var(--koSerif);font-size:15px;line-height:1.85;color:var(--body);white-space:pre-line;word-break:keep-all}
+.from{font-family:var(--hand);font-size:26px}
+.date{font-family:var(--sans);font-weight:500;font-size:11px;letter-spacing:.1em;color:var(--body)}
+.sweet{position:absolute;right:2px;top:18px;width:96px;height:96px;rotate:-12deg;cursor:pointer;background:none;z-index:2}
+.sweet span{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding-bottom:6px;font-family:var(--script);font-size:14px;line-height:.9;color:var(--cream);text-align:center}
+.burst{position:fixed;pointer-events:none;z-index:50;animation:burst 1.1s ease-out forwards}
+@keyframes burst{to{transform:translate(var(--dx),var(--dy)) scale(.6) rotate(var(--r));opacity:0}}
+.lsticks{display:none}
+
+/* ---------- FOOTER ---------- */
+footer{position:relative;padding:56px var(--pad) 48px;display:flex;flex-direction:column;align-items:center;gap:2px;text-align:center;overflow:hidden}
+footer::after{content:"";position:absolute;right:0;top:0;bottom:0;width:36px;background:repeating-linear-gradient(90deg,var(--cream) 0 6px,var(--pink) 6px 12px)}
+footer .big{font-family:var(--serif);font-size:52px;line-height:1.1;display:flex;align-items:center;gap:12px}
+footer .big .stick{width:9px;height:78px;color:var(--pinkDeep)}
+footer .tou{font-family:var(--script);font-size:52px;color:var(--pinkDeep);line-height:1.2}
+footer p{font-size:13px;color:var(--body);margin-top:14px}
+footer small{font-family:var(--sans);font-weight:500;font-size:9px;letter-spacing:.12em;color:var(--body);margin-top:4px}
+
+/* ---------- REPLY MODAL ---------- */
+.modal{position:fixed;inset:0;z-index:60;background:rgba(95,111,69,.45);display:none;align-items:center;justify-content:center;padding:20px}
+.modal.open{display:flex}
+.mbox{position:relative;background:var(--cream);width:100%;max-width:420px;padding:28px 20px 20px;display:flex;flex-direction:column;gap:12px;border-radius:6px}
+.mbox h3{font-family:var(--koSerif);font-size:20px;text-align:center}
+.mbox p{font-size:13px;color:var(--body);text-align:center;line-height:1.5}
+.mbox textarea{width:100%;min-height:150px;border:1px solid var(--ink);background:#fff;padding:12px;font-family:var(--ko);font-size:15px;color:var(--ink);resize:vertical;border-radius:4px}
+.mbox .row{display:flex;gap:8px}
+.mbox .row .btn{flex:1}
+.mbox .close{position:absolute;right:10px;top:8px;background:none;font-size:22px;color:var(--ink);padding:4px 8px}
+.toast{font-size:13px;text-align:center;min-height:18px;color:var(--ink)}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.ill .stick,.float{animation:none}html{scroll-behavior:auto}}
+
+/* ---------- UNFOLDED (Z Fold main screen) & wider ---------- */
+@media (min-width:640px){
+  :root{--pad:44px}
+  nav .bar{padding:18px 32px}
+  nav .side{width:220px}
+  nav .wide{display:inline}
+  nav .narrow{display:none}
+  nav .logo{font-size:30px}
+  .hero{padding:64px 0}
+  .hero .wrap{flex-direction:row;gap:24px}
+  .hero-copy{align-items:flex-start;text-align:left;gap:20px;flex:1}
+  .hero h1{font-size:50px}
+  .hero p{font-size:16px}
+  .hero .btn{width:auto}
+  .ill{flex:0 0 360px;max-width:360px}
+  .cal-sec{padding:56px 0}
+  .card{padding:48px 28px 36px;gap:16px}
+  .card::before{background-size:36px 22px}
+  .card h2{font-size:36px}
+  .month .wd{font-size:11px}
+  .day{aspect-ratio:1/0.9}
+  .day .n{font-size:22px}
+  .day .lb{display:block}
+  .day.circ::after{inset:-10px;border-width:3px}
+  .chip{font-size:13px}
+  .psst{flex-direction:row;justify-content:space-between;text-align:left;padding:14px 12px 14px 24px}
+  .psst p{white-space:normal;font-size:13px}
+  .dday{width:auto;flex:none}
+  .promo .grid{flex-direction:row-reverse;align-items:center;gap:36px;padding:0 0 0 0}
+  .promo .wrap{padding-right:0}
+  .vis{flex:0 0 380px}
+  .promo-copy{flex:1;padding:56px 0}
+  .promo-copy h2{font-size:44px}
+  .promo-copy p{font-size:16px}
+  .bd b{font-size:26px}
+  .promo .btn{width:auto;align-self:flex-start}
+  .letter{padding:72px 0}
+  .letter .wrap{padding:0 56px}
+  .lcard{padding:64px;gap:18px}
+  .lcard::before,.lcard::after{background-size:36px 36px;height:36px;background-image:radial-gradient(circle,var(--cream) 18px,transparent 18.5px)}
+  .lcard::before{top:-18px}.lcard::after{bottom:-18px}
+  .lcard h2{font-size:42px}
+  .with{font-size:36px}
+  .ltext{font-size:16px}
+  .from{font-size:30px}
+  .sweet{width:140px;height:140px;right:20px;top:24px}
+  .sweet span{font-size:20px}
+  .lsticks{display:block}
+  .lsticks .stick{position:absolute;width:15px;height:221px}
+  footer{padding:80px var(--pad) 72px}
+  footer::after{width:80px;background:repeating-linear-gradient(90deg,var(--cream) 0 10px,var(--pink) 10px 20px)}
+  footer .big{font-size:86px;gap:22px}
+  footer .big .stick{width:14px;height:120px}
+  footer .tou{font-size:80px}
+}
+@media (min-width:1100px){
+  .hero h1{font-size:64px}
+  .ill{flex-basis:460px;max-width:460px}
+  .vis{flex-basis:520px}
+  .promo-copy h2{font-size:56px}
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="heart" viewBox="0 0 24 24"><path d="M12 21s-7.5-4.6-9.6-9.2C1 8.7 2.9 5 6.4 5c2.2 0 3.6 1.3 4.6 2.8C12 6.3 13.4 5 15.6 5 19.1 5 21 8.7 19.6 11.8 17.5 16.4 12 21 12 21z"/></symbol>
+    <symbol id="stick" viewBox="0 0 18 260" preserveAspectRatio="none">
+      <rect x="2" y="0" width="14" height="260" rx="7" fill="#E3BC86"/>
+      <rect x="0" y="0" width="18" height="190" rx="9" fill="currentColor"/>
+      <g fill="#F6D3DC"><rect x="4" y="14" width="6" height="2.5" rx="1.2" transform="rotate(-30 7 15)"/><rect x="4" y="98" width="6" height="2.5" rx="1.2" transform="rotate(-30 7 99)"/><rect x="10" y="140" width="6" height="2.5" rx="1.2" transform="rotate(30 13 141)"/></g>
+      <g fill="#FBF7F0"><rect x="10" y="35" width="6" height="2.5" rx="1.2" transform="rotate(30 13 36)"/><rect x="4" y="119" width="6" height="2.5" rx="1.2" transform="rotate(-30 7 120)"/><rect x="10" y="161" width="6" height="2.5" rx="1.2" transform="rotate(30 13 162)"/></g>
+      <g fill="#9AAB72"><rect x="4" y="56" width="6" height="2.5" rx="1.2" transform="rotate(-30 7 57)"/><rect x="10" y="77" width="6" height="2.5" rx="1.2" transform="rotate(30 13 78)"/></g>
+    </symbol>
+  </defs>
+</svg>
+
+<nav>
+  <div class="bar">
+    <div class="side">
+      <a class="narrow" href="#letter" aria-label="편지로 이동"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 7h16M4 12h16M4 17h16" stroke="#5F6F45" stroke-width="1.8" stroke-linecap="round"/></svg></a>
+      <a class="wide" href="#calendar">OUR STORY</a><a class="wide" href="#letter">LETTER</a>
+    </div>
+    <a class="logo" href="#top">pepero</a>
+    <div class="side r"><span class="wide" style="font-family:var(--ko);font-size:12px;letter-spacing:0">상병 진급</span><span>11.11</span><svg class="heart wide" width="16" height="16" fill="#5F6F45"><use href="#heart"/></svg></div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="ill" aria-hidden="false">
+      <div class="photo" style="left:48.4%;top:6.7%;width:43.5%;height:55%;rotate:-5deg">
+        <div class="ph">PHOTO<br>사진 자리</div>
+        <img src="img/photo-hero.jpg" alt="우리 사진" style="object-position:42% 40%" onerror="this.remove()">
+      </div>
+      <div class="tape" style="left:59.7%;top:4.3%;width:16.8%;height:4.7%;rotate:6deg"></div>
+      <svg class="stick" style="left:8.4%;top:6.7%;color:#5B3B30;rotate:-7.5deg"><use href="#stick"/></svg>
+      <svg class="stick" style="left:13.2%;top:12.3%;color:#F2BFCC;rotate:-4.5deg;animation-delay:.3s"><use href="#stick"/></svg>
+      <svg class="stick" style="left:18.1%;top:6.7%;color:#9AAB72;rotate:-1.5deg;animation-delay:.6s"><use href="#stick"/></svg>
+      <svg class="stick" style="left:22.9%;top:12.3%;color:#FBF3E6;rotate:1.5deg;animation-delay:.9s"><use href="#stick"/></svg>
+      <svg class="stick" style="left:27.7%;top:6.7%;color:#5B3B30;rotate:4.5deg;animation-delay:1.2s"><use href="#stick"/></svg>
+      <svg class="stick" style="left:32.6%;top:12.3%;color:#F2BFCC;rotate:7.5deg;animation-delay:1.5s"><use href="#stick"/></svg>
+      <div class="box">
+        <b>PEPERO</b>
+        <small>11.11 · SPECIAL EDITION</small>
+        <hr>
+        <span>for my 임현준</span>
+        <div class="rank"><i></i><i></i><i></i></div>
+      </div>
+      <div class="note">11.11 빼빼로데이 ♡
++ 이번 달 상병 진급 축하해!</div>
+      <svg class="heart float" style="left:91%;top:55%;width:6.1%;height:6.3%;rotate:-14deg" fill="#E9A8B8"><use href="#heart"/></svg>
+      <svg class="heart float" style="left:43.5%;top:1.7%;width:3.9%;height:4%;animation-delay:1s" fill="#E9A8B8"><use href="#heart"/></svg>
+    </div>
+    <div class="hero-copy rv">
+      <span class="eyebrow">(FROM YEOJIN, ON 11.11)</span>
+      <h1>The Sweetest Pepero Day for My Corporal</h1>
+      <p>빼빼로처럼 길~게 오래오래 함께하쟈 너가 군대에 있다는 이유로 빼빼로 데이를 안 챙기는 건 아쉬워서 보내는 작은 러브레터 ^~^</p>
+      <a class="btn" href="#letter">편지 열어보기 &nbsp;→</a>
+    </div>
+  </div>
+</header>
+
+<section class="cal-sec" id="calendar">
+  <div class="wrap">
+    <div class="card rv">
+      <span class="eyebrow">A LOOK AT</span>
+      <h2>NOVEMBER</h2>
+      <div class="month" id="month"></div>
+      <div class="legend">
+        <span class="chip" style="background:var(--pink)">11.01 상병 진급</span>
+        <span class="chip" style="background:var(--dark);color:var(--cream)">11.11 빼빼로데이</span>
+        <span class="chip" style="background:var(--pinkDeep)">11.28 외출 ♡</span>
+      </div>
+    </div>
+    <div class="psst rv">
+      <p>PSST! 11월 28일(토), 너 외출 나오는 날
+달력에 하트 미리 그려둠 ♡</p>
+      <div class="dday"><b id="dday">외출 D-17</b><small>11.28 SAT</small></div>
+    </div>
+  </div>
+</section>
+
+<section class="promo">
+  <div class="wrap">
+    <div class="grid">
+      <div class="vis rv">
+        <div class="photo" style="left:35.1%;top:7%;width:23.8%;height:86%;rotate:-5deg">
+          <div class="ph">PHOTO<br>사진 자리</div>
+          <img src="img/photo-strip.jpg" alt="우리 인생네컷" onerror="this.remove()">
+        </div>
+        <div class="tape" style="left:34.3%;top:4.5%;width:21.4%;height:5.5%;background:var(--dark);opacity:.9;rotate:10deg"></div>
+        <div class="tape" style="left:38.5%;top:88.8%;width:21.4%;height:5.5%;rotate:-8deg"></div>
+        <div class="badge"><div class="rank"><i></i><i></i><i></i></div><b>CORPORAL</b><small>2026.11</small></div>
+        <div class="tag"><i>Pepero Curated By:</i><span>여지닝ㅋ ♡</span></div>
+        <div class="sticker">promoted<br>with love!</div>
+      </div>
+      <div class="promo-copy rv">
+        <span class="eyebrow">PRIVATE FIRST CLASS → CORPORAL</span>
+        <h2>Hello, Corporal.
+It wants Pepero!</h2>
+        <p>이번 달부터 작대기 하나 더! 상병 진급 진심으로 축하해!! 자기가 고생하는 만큼 빼빼로도 제일 큰 걸로 준비했어</p>
+        <div class="badges">
+          <div class="bd a"><b>상병</b><small>CORPORAL</small></div>
+          <div class="bd b"><b>11.11</b><small>PEPERO DAY</small></div>
+          <div class="bd c"><b>∞</b><small>LOVE / DAY</small></div>
+        </div>
+        <button class="btn" id="replyBtn">답장 보내기 &nbsp;→</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="checker" aria-hidden="true"></div>
+
+<section class="letter" id="letter">
+  <button class="sweet" id="sweet" aria-label="하트 터뜨리기">
+    <svg width="100%" height="100%" fill="#E9A8B8"><use href="#heart"/></svg>
+    <span>Just<br>Something<br>Sweet</span>
+  </button>
+  <div class="lsticks" aria-hidden="true">
+    <svg class="stick" style="left:10px;bottom:40px;color:#5B3B30;rotate:-24deg"><use href="#stick"/></svg>
+    <svg class="stick" style="left:54px;bottom:30px;color:#9AAB72;rotate:-12deg"><use href="#stick"/></svg>
+    <svg class="stick" style="right:30px;bottom:30px;color:#F2BFCC;rotate:20deg"><use href="#stick"/></svg>
+  </div>
+  <div class="wrap">
+    <article class="lcard rv">
+      <div class="stamp"><b>pepero</b><small>LOVE CLUB</small></div>
+      <span class="lpill">A LETTER FOR YOU</span>
+      <h2>To. ㅇㅎㅈ ㅋ</h2>
+      <div class="with">with all my love</div>
+      <p class="ltext">자기야~ 상병 진급 진짜 진짜 축하해!! 저번 외박에 너한테 편지를 못 써서 이렇게라도 쓴당
+이번 달부터 작대기가 하나 더 늘었다니 괜히 내가 더 뿌듯하고 자랑스러워
+
+같이 빼빼로를 나눠 먹지는 못하는 빼빼로데이지만, 이 편지로 내 마음만큼은 제일 먼저 전해주고 싶었어
+
+우리 앞으로도 빼빼로처럼 달달하게(막이랰) 하루하루를 보내자~ 남은 군 생활도 다치지 말고 몸 건강히 잘 지내야돼 알았지?? 28일에 외출 나오면 그때 빼빼로데이 챙기자고 빼빼로 먹긴 좀 그러니까 고냥 철원에서 맛있는 거나 먹자 ㅎㅎ. 많이 보고 싶어 ♡ 사랑해</p>
+      <div class="from">From. 여진</div>
+      <div class="date">2026. 11. 11</div>
+    </article>
+  </div>
+</section>
+
+<footer>
+  <div class="big">happy</div>
+  <div class="big">pepero <svg class="stick"><use href="#stick"/></svg> day</div>
+  <div class="tou">to u</div>
+  <p>빼빼로 대신이닼. 상병 진급도 진심으로 축하해~</p>
+  <small>© 2026.11.11 — MADE WITH LOVE BY YEOJIN</small>
+</footer>
+
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="mtitle">
+  <div class="mbox">
+    <button class="close" id="mclose" aria-label="닫기">×</button>
+    <h3 id="mtitle">To. 여진</h3>
+    <p>답장 써서 복사한 다음, 카톡에 붙여넣어서 보내줘 ♡</p>
+    <textarea id="reply" placeholder="여기에 답장을 써줘!"></textarea>
+    <div class="row">
+      <button class="btn" id="copy" style="background:var(--dark);color:var(--cream)">복사하기</button>
+    </div>
+    <div class="toast" id="toast"></div>
+  </div>
+</div>
+
+<script>
+// November 2026 calendar (Nov 1 = Sunday)
+(function(){
+  const m=document.getElementById('month');
+  ['SUN','MON','TUE','WED','THU','FRI','SAT'].forEach(d=>{const e=document.createElement('div');e.className='wd';e.textContent=d;m.appendChild(e);});
+  const mark={1:['m1','상병 진급'],11:['m11','빼빼로데이'],28:['m28','외출 ♡']};
+  const now=new Date(Date.now()+9*3600e3); // KST
+  const isNov=now.getUTCFullYear()===2026&&now.getUTCMonth()===10;
+  for(let d=1;d<=35;d++){
+    const c=document.createElement('div');
+    if(d>30){c.className='day empty';m.appendChild(c);continue;}
+    c.className='day';
+    const mk=mark[d];
+    if(mk){c.classList.add(mk[0]);if(d!==1)c.classList.add('circ');}
+    if(isNov&&now.getUTCDate()===d)c.classList.add('today');
+    c.innerHTML='<span class="n">'+String(d).padStart(2,'0')+'</span>'+(mk?'<svg class="heart" width="16" height="16" fill="'+(d===11?'#F6D3DC':d===28?'#FBF7F0':'#E9A8B8')+'"><use href="#heart"/></svg><span class="lb">'+mk[1]+'</span>':'');
+    m.appendChild(c);
+  }
+})();
+
+// D-day to 2026-11-28 (KST)
+(function(){
+  const el=document.getElementById('dday');
+  const k=new Date(Date.now()+9*3600e3);
+  const today=Date.UTC(k.getUTCFullYear(),k.getUTCMonth(),k.getUTCDate());
+  const diff=Math.round((Date.UTC(2026,10,28)-today)/864e5);
+  el.textContent=diff>0?'외출 D-'+diff:diff===0?'외출 D-DAY ♡':'외출 다녀왔지? ♡';
+})();
+
+// reveal on scroll
+(function(){
+  const els=document.querySelectorAll('.rv');
+  if(!('IntersectionObserver' in window)){els.forEach(e=>e.classList.add('in'));return;}
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.12});
+  els.forEach(e=>io.observe(e));
+})();
+
+// heart burst
+function burst(x,y){
+  const cols=['#E9A8B8','#F6D3DC','#8FA06A','#5F6F45'];
+  for(let i=0;i<14;i++){
+    const s=document.createElementNS('http://www.w3.org/2000/svg','svg');
+    s.setAttribute('class','burst');s.setAttribute('width','18');s.setAttribute('height','18');s.setAttribute('fill',cols[i%4]);
+    s.innerHTML='<use href="#heart"/>';
+    const a=Math.random()*Math.PI*2,r=60+Math.random()*90;
+    s.style.left=(x-9)+'px';s.style.top=(y-9)+'px';
+    s.style.setProperty('--dx',Math.cos(a)*r+'px');s.style.setProperty('--dy',Math.sin(a)*r+'px');s.style.setProperty('--r',(Math.random()*120-60)+'deg');
+    document.body.appendChild(s);setTimeout(()=>s.remove(),1200);
+  }
+}
+document.getElementById('sweet').addEventListener('click',e=>{const r=e.currentTarget.getBoundingClientRect();burst(r.left+r.width/2,r.top+r.height/2);});
+document.querySelectorAll('.day.m11,.day.m28').forEach(d=>d.addEventListener('click',e=>{const r=d.getBoundingClientRect();burst(r.left+r.width/2,r.top+r.height/2);}));
+
+// reply modal
+const modal=document.getElementById('modal'),toast=document.getElementById('toast'),ta=document.getElementById('reply');
+document.getElementById('replyBtn').addEventListener('click',()=>{modal.classList.add('open');toast.textContent='';setTimeout(()=>ta.focus(),50);});
+document.getElementById('mclose').addEventListener('click',()=>modal.classList.remove('open'));
+modal.addEventListener('click',e=>{if(e.target===modal)modal.classList.remove('open');});
+try{ta.value=localStorage.getItem('pepero-reply')||'';}catch(e){}
+ta.addEventListener('input',()=>{try{localStorage.setItem('pepero-reply',ta.value);}catch(e){}});
+document.getElementById('copy').addEventListener('click',async()=>{
+  const text=ta.value.trim();
+  if(!text){toast.textContent='답장을 먼저 써줘!';return;}
+  try{await navigator.clipboard.writeText(text);toast.textContent='복사됐어! 카톡에 붙여넣어줘 ♡';}
+  catch(e){ta.select();toast.textContent='글자가 선택됐어. 길게 눌러서 복사해줘!';}
+});
+</script>
+</body>
+</html>
